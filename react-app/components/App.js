@@ -1,12 +1,17 @@
 import React from 'react';
+import AddFood from './add-food';
+import CategoriesList from './categories-list';
 
-class App extends React.Component {
+export default class App extends React.Component {
    render() {
       return (
-         <div>
-            React app!
-         </div>
+      	<div>
+	    	<h1>
+	    		Calorie Tracker
+	    	</h1>
+	    	<AddFood />
+	    	<CategoriesList />
+        </div>
       );
    }
 }
-export default App;
