@@ -16,9 +16,9 @@ export default class FoodList extends React.Component {
 	render() {
 		return (
 			<div style={{width: '100%'}}>
-				<table style={{width: '95%', margin: 'auto'}}>
+				<table style={{width: '85%', margin: 'auto'}}>
 					<FoodListHeader addFood={this.props.addFood.bind(this)}/>					
-					<tbody bordered>
+					<tbody>
 						{this.renderItems()}
 					</tbody>
 				</table>

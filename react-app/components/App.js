@@ -18,9 +18,10 @@ export default class App extends React.Component {
 
    	render() {
       	return (
-	      	<div>
+	      	<div style={{marginTop: '30px'}}>
 		    	<h1 style={{textAlign: 'center'}}>Calorie Tracker</h1>
-		    	<FoodList 
+		    	<br/>
+		    	<FoodList
 			    	food={this.state.food} 
 			    	saveFoodItem={this.saveFoodItem.bind(this)} 
 			    	deleteFoodItem={this.deleteFoodItem.bind(this)}
