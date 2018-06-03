@@ -4,6 +4,10 @@ var config = {
       path:'/',
       filename: 'index.js',
    },
+   mode: 'production',
+   performance: {
+      hints: false
+   },
    devServer: {
       inline: true,
       port: 8080
@@ -17,6 +21,17 @@ var config = {
             query: {
                presets: ['es2015', 'react']
             }
+         },
+         {
+            test: /\.css$/, 
+            use: [
+               {
+                  loader: 'style-loader'
+               },
+               {
+                  loader: 'css-loader'
+               }
+            ]
          }
       ]
    }

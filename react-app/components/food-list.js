@@ -1,15 +1,29 @@
+import _ from 'lodash';
 import React from 'react';
-import CategoriesListHeader from './categories-list-header';
+import FoodListHeader from './food-list-header';
 import FoodItem from './food-item';
+import AddFood from './add-food';
+import './Style.css';
 
+export default class FoodList extends React.Component {
 
-export default class CategoriesList extends React.Component {
+	renderItems(){
+		const props = _.omit(this.props, 'food');
+
+		return _.map(this.props.food, (foodItem, index) => <FoodItem key={index} {...foodItem} {...props} />);
+	}
+
 	render() {
 		return (
-			<table>
-				<CategoriesListHeader />
-				<FoodItem />
-			</table>
+			<div>
+				<table>
+					<FoodListHeader/>
+					<AddFood addFood={this.props.addFood.bind(this)}/>
+					<tbody>
+						{this.renderItems()}
+					</tbody>
+				</table>
+			</div>
 		);
 	}
 }
