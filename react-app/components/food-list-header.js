@@ -1,16 +1,18 @@
 import React from 'react';
-import './Style.css';
+import 'react-bootstrap';
+import AddFood from './add-food';
 
 export default class FoodListHeader extends React.Component {
 	render() {
 		return (
-			<thead>
+			<thead class="thead-dark">
+				<AddFood addFood={this.props.addFood.bind(this)}/>
 				<tr>
-					<th>Name</th>
-					<th>Calories</th>
-					<th>Protein</th>
-					<th>Carbohydrates</th>
-					<th>Fat</th>
+					<th scope="col">Name</th>
+					<th scope="col">Calories</th>
+					<th scope="col">Protein</th>
+					<th scope="col">Carbohydrates</th>
+					<th scope="col">Fat</th>
 				</tr>
 			</thead>
 		);

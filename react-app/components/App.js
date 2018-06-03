@@ -19,7 +19,7 @@ export default class App extends React.Component {
    	render() {
       	return (
 	      	<div>
-		    	<h1>Calorie Tracker</h1>
+		    	<h1 style={{textAlign: 'center'}}>Calorie Tracker</h1>
 		    	<FoodList 
 			    	food={this.state.food} 
 			    	saveFoodItem={this.saveFoodItem.bind(this)} 

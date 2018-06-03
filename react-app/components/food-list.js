@@ -3,7 +3,7 @@ import React from 'react';
 import FoodListHeader from './food-list-header';
 import FoodItem from './food-item';
 import AddFood from './add-food';
-import './Style.css';
+import 'react-bootstrap';
 
 export default class FoodList extends React.Component {
 
@@ -15,11 +15,10 @@ export default class FoodList extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<table>
-					<FoodListHeader/>
-					<AddFood addFood={this.props.addFood.bind(this)}/>
-					<tbody>
+			<div style={{width: '100%'}}>
+				<table style={{width: '95%', margin: 'auto'}}>
+					<FoodListHeader addFood={this.props.addFood.bind(this)}/>					
+					<tbody bordered>
 						{this.renderItems()}
 					</tbody>
 				</table>

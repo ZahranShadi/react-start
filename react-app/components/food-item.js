@@ -1,5 +1,5 @@
 import React from 'react';
-import './Style.css';
+import 'react-bootstrap';
 
 var oldItem = {};
 
@@ -90,10 +90,8 @@ export default class FoodItem extends React.Component {
 					<td><input type="text" defaultValue={foodItem.protein} ref="editProtein" /></td>
 					<td><input type="text" defaultValue={foodItem.carbohydrates} ref="editCarbs" /></td>
 					<td><input type="text" defaultValue={foodItem.fat} ref="editFat" /></td>
-					<td>
-						<button onClick={this.onSaveClick.bind(this)}>Save</button>
-						<button onClick={this.onCancelClick.bind(this)}>Cancel</button>
-					</td>
+					<td><button type="button" class="btn btn-dark" onClick={this.onSaveClick.bind(this)}>Save</button></td>
+					<td><button type="button" class="btn btn-dark" onClick={this.onCancelClick.bind(this)}>Cancel</button></td>
 				</tr>
 			);
 		}
@@ -105,10 +103,8 @@ export default class FoodItem extends React.Component {
 				<td>{this.props.protein}</td>
 				<td>{this.props.carbohydrates}</td>
 				<td>{this.props.fat}</td>
-				<td>
-					<button onClick={this.onEditClick.bind(this)}>Edit</button>
-					<button onClick={this.onDeleteClick.bind(this)}>Delete</button>
-				</td>
+				<td><button type="button" class="btn btn-dark" onClick={this.onEditClick.bind(this)}>Edit</button></td>
+				<td><button type="button" class="btn btn-dark" onClick={this.onDeleteClick.bind(this)}>Delete</button></td>
 			</tr>
 		);
 	}

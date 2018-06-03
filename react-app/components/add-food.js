@@ -1,5 +1,5 @@
 import React from 'react';
-import './Style.css';
+import 'react-bootstrap';
 
 export default class AddFood extends React.Component {
   render() {
@@ -10,7 +10,7 @@ export default class AddFood extends React.Component {
         <td><input type="text" placeholder="Protein" ref="proteinInput"/></td>
         <td><input type="text" placeholder="Carbohydrates" ref="carbsInput"/></td>
         <td><input type="text" placeholder="Fat" ref="fatInput"/></td>
-        <td><button onClick={this.handleAddition.bind(this)}>Add</button></td>
+        <td><button type="button" class="btn btn-dark" onClick={this.handleAddition.bind(this)}>Add</button></td>
       </tr>
     );
   }
@@ -20,14 +20,15 @@ export default class AddFood extends React.Component {
 
     var formInput = this.refs;
 
-    this.props.addFood(formInput.nameInput.value, formInput.caloriesInput.value, 
-      formInput.proteinInput.value, formInput.carbsInput.value, formInput.fatInput.value);
+    if (!(formInput.caloriesInput.value == '')) {
+      this.props.addFood(formInput.nameInput.value, formInput.caloriesInput.value, 
+        formInput.proteinInput.value, formInput.carbsInput.value, formInput.fatInput.value);
+    }
 
     formInput.nameInput.value = '';
     formInput.caloriesInput.value= '';
     formInput.proteinInput.value = '';
     formInput.carbsInput.value = '';
     formInput.fatInput.value = '';
-
   }
 }
